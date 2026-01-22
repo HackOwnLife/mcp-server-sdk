@@ -9,7 +9,14 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface PluginDescriptor {
     String name();
+
     String version();
+
     String description();
+
+    String author();
+
+    String openApiSpec();
+
     int priority() default 100;
 }
