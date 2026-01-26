@@ -1,17 +1,21 @@
 package cloud.fesh.plugin;
 
+import cloud.fesh.plugin.enums.AuthProviderTypeEnum;
+
 import java.util.Map;
 
 /**
  * 认证提供者插件接口
  * 用于支持不同的第三方认证方式（如企业微信、钉钉等）
+ * 
+ * 注意：如果插件需要处理消息请求，应该同时实现 MessageHandlerPlugin 接口
  */
 public interface AuthProviderPlugin extends Plugin {
     /**
      * 获取认证提供者类型
      * @return 提供者类型，如 "WECOM", "DINGTALK" 等
      */
-    String getProviderType();
+    AuthProviderTypeEnum getProviderType();
 
     /**
      * 通过授权码获取用户信息
